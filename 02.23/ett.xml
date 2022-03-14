@@ -1,0 +1,29 @@
+<?xml version="1.0">
+<etterem-nyilvantartas>
+
+	<!---Ettermek --->
+	<etterem ekod="e1">
+	</etterem>
+	<etterem>
+	</etterem>
+	
+	
+	<foszakacs>
+	</foszakacs>
+	<foszakacs>
+	</foszakacs>
+	
+	<szakacs>
+	</szakacs>
+	
+	<vendeg>
+	</vendeg>
+	<vendeg>
+	</vendeg>
+	
+	
+	<rendeles>
+	</rendeles>
+	<rendeles>
+	</rendeles>
+</etterem-nyilvantartas>
