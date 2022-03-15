@@ -106,6 +106,16 @@
 		<osszeg>500</osszeg>
 		<etel>Szodaviz</etel>
 	</rendeles>
+		<rendeles fk_vkod="v2" fk_ekod="e1">
+		<osszeg>750</osszeg>
+		<etel>Szodaviz</etel>
+	</rendeles>
+	</rendeles>
+		<rendeles fk_vkod="v2" fk_ekod="e2">
+		<osszeg>1000</osszeg>
+		<etel>Kókuszkocka</etel>
+	</rendeles>
+	
 	
 	
 </DW9YG6>
