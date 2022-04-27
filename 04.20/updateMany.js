@@ -1,0 +1,1 @@
+db.auto.updateMany({}, {"$set": {"allapot": "jo"}})

@@ -1,0 +1,1 @@
+db.auto.find({'ar' : {'$gt': 1000000}},{'tipus' : 1 , 'ar' : 2 , _id : 0}).count();

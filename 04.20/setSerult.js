@@ -1,0 +1,1 @@
+db.auto.updateMany ({"gyartas_ev" : {"$lt" : 2010}},{"$set":{"allapot": "serult"}})
