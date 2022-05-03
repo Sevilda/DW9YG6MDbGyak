@@ -1,29 +1,146 @@
-<?xml version="1.0">
-<etterem-nyilvantartas>
+<DW9YG6 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="VE_XMLSchema.xsd">
 
-	<!---Ettermek --->
+	<!---Ettermek -->
 	<etterem ekod="e1">
+		<nev> A </nev>
+		<csillag> 2</csillag>
+		<cim>
+			<varos>Miskolc</varos>
+			<utca>X</utca>
+			<hazszam>42</hazszam>
+		</cim>
 	</etterem>
-	<etterem>
+	<etterem ekod="e2">
+		<nev>B </nev>
+		<csillag> 3</csillag>
+		<cim>
+			<varos>Varbo</varos>
+			<utca>Y</utca>
+			<hazszam>69</hazszam>
+		</cim>
 	</etterem>
 	
-	
-	<foszakacs>
+	<!---Foszakacsok -->
+	<foszakacs fszkod="f1" fk_ekod="e1">
+		<nev>Kis Laci</nev>
+		<eletkor>55</eletkor>
+		<vegzettseg>Szakkozep</vegzettseg>
+		<vegzettseg>Szakkepzes</vegzettseg>
+		<vegzettseg>Fejlesztes</vegzettseg>
 	</foszakacs>
-	<foszakacs>
+	<foszakacs fszkod="f2" fk_ekod="e2">
+		<nev>Nagy Pisti</nev>
+		<eletkor>19</eletkor>
+		<vegzettseg>Szakkozep</vegzettseg>
+		<vegzettseg>Szakkepzes</vegzettseg>
 	</foszakacs>
 	
-	<szakacs>
+	<!---Szakacsok -->
+	<szakacs szkod="sz1" fk_ekod="e1">
+		<nev>Kis Jany</nev>
+		<reszleg>Elso</reszleg>
+		<vegzettseg>Kozepiskola</vegzettseg>
+	</szakacs>
+	<szakacs szkod="sz2" fk_ekod="e1">
+		<nev>Nagy Peti</nev>
+		<reszleg>Elso</reszleg>
+		<vegzettseg>Szakkepzes</vegzettseg>
+	</szakacs>
+	<szakacs szkod="sz3" fk_ekod="e1">
+		<nev>Halasz Jani</nev>
+		<reszleg>Masodik</reszleg>
+		<vegzettseg>Semmi</vegzettseg>
+	</szakacs>
+	<szakacs szkod="sz4" fk_ekod="e2">
+		<nev>Szolga Gyongy</nev>
+		<reszleg>Mosogato</reszleg>
+		<vegzettseg>Szakkozepiskola</vegzettseg>
+		<vegzettseg>Szakkepzes</vegzettseg>
 	</szakacs>
 	
-	<vendeg>
+	<!---Gyakornokok -->
+	<gyakornok gykod="gy1" fk_ekod="e1">
+		<nev>Pelda Panna</nev>
+		<muszak>nappali</muszak>
+		<muszak>delutani</muszak>
+		<gyakorlat>
+			<idotartam>6 honap</idotartam>
+			<kezdet>2022-03-06</kezdet>
+		</gyakorlat>
+	</gyakornok>
+	<gyakornok gykod="gy2" fk_ekod="e1">
+		<nev>Pelda K</nev>
+		<muszak>reggeli</muszak>
+		<muszak>delutani</muszak>
+		<gyakorlat>
+			<idotartam>3 honap</idotartam>
+			<kezdet>2022-03-30</kezdet>
+		</gyakorlat>
+	</gyakornok>
+	
+	<!---Vendegek -->
+	<vendeg vkod="v1">
+		<nev>Toth Lenke</nev>
+		<cim>
+			<varos>Budapest</varos>
+			<utca>Utcacska</utca>
+			<hazszam>80</hazszam>
+		</cim>
 	</vendeg>
-	<vendeg>
+	<vendeg vkod="v2">
+		<nev>Vadon E</nev>
+		<cim>
+			<varos>Miskolc</varos>
+			<utca>Utca</utca>
+			<hazszam>10</hazszam>
+		</cim>
+	</vendeg>
+		<vendeg vkod="v3">
+		<nev>Kiss Mari</nev>
+		<cim>
+			<varos>Miskolc</varos>
+			<utca>Fõ</utca>
+			<hazszam>420</hazszam>
+		</cim>
+	</vendeg>
+		<vendeg vkod="v4">
+		<nev>Nagy Medve</nev>
+		<cim>
+			<varos>Szerencs</varos>
+			<utca>Mellék</utca>
+			<hazszam>66</hazszam>
+		</cim>
 	</vendeg>
 	
-	
-	<rendeles>
+	<!---Rendelesek -->
+	<rendeles fk_vkod="v1" fk_ekod="e1">
+		<osszeg>64000</osszeg>
+		<etel>Rantott rak</etel>
 	</rendeles>
-	<rendeles>
+	<rendeles fk_vkod="v2" fk_ekod="e1">
+		<osszeg>500</osszeg>
+		<etel>Szodaviz</etel>
 	</rendeles>
-</etterem-nyilvantartas>
+		<rendeles fk_vkod="v2" fk_ekod="e1">
+		<osszeg>750</osszeg>
+		<etel>Szodaviz</etel>
+	</rendeles>
+		<rendeles fk_vkod="v2" fk_ekod="e2">
+		<osszeg>1000</osszeg>
+		<etel>Kókuszkocka</etel>
+	</rendeles>
+	    <rendeles fk_vkod="v4" fk_ekod="e1">
+		<osszeg>1000</osszeg>
+		<etel>Kókuszkocka</etel>
+	</rendeles>
+		<rendeles fk_vkod="v4" fk_ekod="e2">
+		<osszeg>1500</osszeg>
+		<etel>Zserbó</etel>
+	</rendeles>
+		<rendeles fk_vkod="v3" fk_ekod="e2">
+		<osszeg>2500</osszeg>
+		<etel>Lángos</etel>
+	</rendeles>
+
+
+</DW9YG6>

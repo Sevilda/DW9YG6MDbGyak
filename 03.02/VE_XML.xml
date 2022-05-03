@@ -42,17 +42,17 @@
 		<reszleg>Elso</reszleg>
 		<vegzettseg>Kozepiskola</vegzettseg>
 	</szakacs>
-	<szakacs  szkod="sz2" fk_ekod="e1">
+	<szakacs szkod="sz2" fk_ekod="e1">
 		<nev>Nagy Peti</nev>
 		<reszleg>Elso</reszleg>
 		<vegzettseg>Szakkepzes</vegzettseg>
 	</szakacs>
-	<szakacs  szkod="sz3" fk_ekod="e1">
+	<szakacs szkod="sz3" fk_ekod="e1">
 		<nev>Halasz Jani</nev>
 		<reszleg>Masodik</reszleg>
 		<vegzettseg>Semmi</vegzettseg>
 	</szakacs>
-	<szakacs  szkod="sz4" fk_ekod="e2">
+	<szakacs szkod="sz4" fk_ekod="e2">
 		<nev>Szolga Gyongy</nev>
 		<reszleg>Mosogato</reszleg>
 		<vegzettseg>Szakkozepiskola</vegzettseg>
@@ -60,7 +60,7 @@
 	</szakacs>
 	
 	<!---Gyakornokok -->
-	<gyakornok  gykod="gy1" fk_ekod="e1">
+	<gyakornok gykod="gy1" fk_ekod="e1">
 		<nev>Pelda Panna</nev>
 		<muszak>nappali</muszak>
 		<muszak>delutani</muszak>
@@ -80,7 +80,7 @@
 	</gyakornok>
 	
 	<!---Vendegek -->
-	<vendeg  vkod="v1">
+	<vendeg vkod="v1">
 		<nev>Toth Lenke</nev>
 		<cim>
 			<varos>Budapest</varos>
@@ -94,6 +94,22 @@
 			<varos>Miskolc</varos>
 			<utca>Utca</utca>
 			<hazszam>10</hazszam>
+		</cim>
+	</vendeg>
+		<vendeg vkod="v3">
+		<nev>Kiss Mari</nev>
+		<cim>
+			<varos>Miskolc</varos>
+			<utca>Fő</utca>
+			<hazszam>420</hazszam>
+		</cim>
+	</vendeg>
+		<vendeg vkod="v4">
+		<nev>Nagy Medve</nev>
+		<cim>
+			<varos>Szerencs</varos>
+			<utca>Mellék</utca>
+			<hazszam>66</hazszam>
 		</cim>
 	</vendeg>
 	
@@ -114,4 +130,18 @@
 		<osszeg>1000</osszeg>
 		<etel>Kókuszkocka</etel>
 	</rendeles>
+	    <rendeles fk_vkod="v4" fk_ekod="e1">
+		<osszeg>1000</osszeg>
+		<etel>Kókuszkocka</etel>
+	</rendeles>
+		<rendeles fk_vkod="v4" fk_ekod="e2">
+		<osszeg>1500</osszeg>
+		<etel>Zserbó</etel>
+	</rendeles>
+		<rendeles fk_vkod="v3" fk_ekod="e2">
+		<osszeg>2500</osszeg>
+		<etel>Lángos</etel>
+	</rendeles>
+
+
 </DW9YG6>
