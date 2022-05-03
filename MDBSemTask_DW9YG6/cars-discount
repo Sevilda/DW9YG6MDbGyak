@@ -1,0 +1,19 @@
+xquery version "3.1";
+
+declare function local:calcDiscount($year)
+as xs:decimal? {
+    let $currentYear:= fn:year-from-date(fn:current-date())
+    let $discount := ( (xs:integer($currentYear)-xs:integer($year)) * 0.02) 
+    return $discount
+};
+let $cars := doc('https://raw.githubusercontent.com/altova/XPath-XQuery-SQL-Tutorial/master/data/Cars.xml')/CarsDB/Car
+
+for $c in $cars
+return ( 
+    <Car>
+        <Model> {$c/Model/text()} </Model>
+        <Discount> {local:calcDiscount($c/YearFrom)*100}% </Discount>
+    </Car>)
+
+(: Adott a Cars.xml adathalmaz. Készítsünk egy függvényt, ami kiszámolja, 
+ : mekkora kedvezményt kapnánk az autómodellekre, ha minden év, amit a modell forgalomban tölött 2% kedvezményt ad. Listázzuk ki a modelleket és a hozzájuk tartozó kedvezményt. :)

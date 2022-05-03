@@ -1,0 +1,7 @@
+xquery version "3.1";
+
+let $ett := doc('etterem.xml')/DW9YG6
+
+for $sz in $ett/Szamla[@fk_ekod eq "e2"]
+
+return update delete $sz

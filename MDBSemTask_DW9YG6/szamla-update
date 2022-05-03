@@ -1,0 +1,32 @@
+xquery version "3.1";
+
+let $ett := doc('etterem.xml')/DW9YG6
+let $result := 
+for $r in $ett/rendeles, $v in $ett/vendeg, $e in $ett/etterem
+where $r/@fk_vkod eq $v/@vkod and $r/@fk_ekod eq $e/@ekod
+return  
+<res> 
+    <ett>{$e} </ett>
+    <vendeg>{$v} </vendeg>
+    <rendeles> {$r} </rendeles>
+</res>
+    
+let $szamla:= 
+for $n in 1 to count($result)
+let $date:= current-dateTime()
+return 
+    <Szamla szkod="{$n}" fk_ekod="{$result[position()=$n]/ett/etterem/@ekod}" fk_vkod="{$result[position()=$n]/vendeg/vendeg/@vkod}">
+    <Fizetendo-osszeg> {$result[position()=$n]/rendeles/rendeles/osszeg/text()} </Fizetendo-osszeg>
+    <Dátum> {$date} </Dátum>
+    </Szamla>
+    
+return update insert $szamla into $ett
+
+
+    
+      (: Az adott workspace-be importáljuk be az Étterem nyilvántartáshoz tartozó XML fájlt, és ezzel dolgozzunk a továbbiakban.
+      Készítsünk egy számla elemet, amit az eredeti XML fájlhoz hozzá tudunk adni és az egy valid XML marad.
+      Szerepeljen benne egy saját kulcs a számla azonosításához, valamint a vendégre és az étteremre mutató idegen kulcsok. 
+      A számla tartalmazza elemként a fizetendő összeget, valamint az aktuális időt!
+      
+      Ezek után adjuk hozzá a számla elemeket az XML fájlhoz!:)

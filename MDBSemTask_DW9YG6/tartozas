@@ -1,0 +1,19 @@
+xquery version "3.1";
+
+
+let $ett := doc("https://raw.githubusercontent.com/Sevilda/DW9YG6MDbGyak/main/03.02/VE_XML.xml")/DW9YG6
+
+for $r in $ett/rendeles, $v in $ett/vendeg
+where $r/@fk_vkod eq $v/@vkod and $r/@fk_ekod
+group by $vendeg := $r/@fk_vkod
+return 
+    <Tartozas>
+    <Vendeg>    {$v/nev/text()} 
+    </Vendeg>
+    <Fizetendo-osszeg> {sum($r/osszeg)} </Fizetendo-osszeg>
+    </Tartozas>
+
+
+(: Vegyük a korábban elkészített Étterem nyilvántartás XML fájlt! 
+ : Ha még nincs egy vendéghez több rendelésed, akkor vegyél fel hozzá. 
+ : Ez után készíts egy tartozás nyilvántartást a vendégekhez, ahol feltünteted a vendég nevét és az összeget amivel az éttermeknek összesen tartozik:)

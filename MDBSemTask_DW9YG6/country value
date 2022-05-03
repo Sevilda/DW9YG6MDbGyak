@@ -1,0 +1,17 @@
+xquery version "3.1";
+
+let $cars := doc('https://raw.githubusercontent.com/altova/XPath-XQuery-SQL-Tutorial/master/data/Cars.xml')/CarsDB/Car
+let $man := doc('https://raw.githubusercontent.com/altova/XPath-XQuery-SQL-Tutorial/master/data/Cars_Manufacturer_Countries.xml')/CCDB/CarCountry
+
+for $res in 
+(for $c in $cars[Fuel eq 'Diesel'], $m in $man
+where distinct-values($c/Manufacturer) eq $m/Manufacturer
+group by $country := $m/Country
+order by  count($c/Model) descending
+return 
+    <country name="{$country}"> 
+    {count($c/Model)}
+    </country>) [position() = 1 to 5]
+return $res
+
+(: Adott 2 XML fájl. Feladat az, hogy listázzuk ki az 5, legtöbb olyan autómodellt gyártó országot, ami dízelt használ üzemanyagként valamint hozzájuk tartozó darabszámokat, XML-ként formázva:)
